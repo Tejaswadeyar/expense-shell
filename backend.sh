@@ -3,6 +3,7 @@ log_file=/tmp/expense.log
 
 Head() {
   echo -e "\e[35m$2\e[om"
+  }
 
 Head " disable the default version"
 dnf module disable nodejs -y &>>$log_file
