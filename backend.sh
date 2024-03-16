@@ -5,7 +5,7 @@ Head() {
   echo -e "\e[35m$2\e[om"
   }
 
-Head " disable the default version"
+Head "disable the default version"
 dnf module disable nodejs -y &>>$log_file
 dnf module enable nodejs:18 -y &>>$log_file
 
