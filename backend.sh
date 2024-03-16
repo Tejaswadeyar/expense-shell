@@ -1,4 +1,4 @@
-MYSQL_PASSWORD=${1}
+MYSQL_PASSWORD=$1
 log_file=/tmp/expense.log
 
 Head() {
