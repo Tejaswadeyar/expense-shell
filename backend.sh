@@ -2,7 +2,7 @@ MYSQL_PASSWORD=${1}
 log_file=/tmp/expense.log
 
 Head() {
-  echo -e "\e[35m$2\e[om"
+  echo -e "\e[35m$1\e[om"
   }
 
 Head "disable the default version"
