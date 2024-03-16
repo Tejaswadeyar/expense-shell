@@ -1,3 +1,4 @@
+MYSQL_PASSWORD=${1}
 log_file=/tmp/expense.log
 echo -e "\e[34m disable the default version\e[0m"
 dnf module disable nodejs -y &>>$log_file
@@ -35,4 +36,4 @@ systemctl restart backend &>>$log_file
 echo -e "\e[34m install mysql\e[0m"
 dnf install mysql -y &>>$log_file
 
-mysql -h mysql-dev.tejas1996.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+mysql -h mysql-dev.tejas1996.online -uroot -p${MYSQL_PASSWORD} < /app/schema/backend.sql &>>$log_file
