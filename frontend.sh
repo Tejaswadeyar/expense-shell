@@ -1,3 +1,4 @@
+component=frontend
 source common.sh
 
 
@@ -9,19 +10,7 @@ Head "copy the .conf to defult expense.conf"
 cp expense.conf /etc/nginx/default.d/expense.conf &>>$log_file
 echo $?
 
-Head "remove default htlm code"
-rm -rf /usr/share/nginx/html/* &>>$log_file
-echo $?
-
-Head "download Application code"
-curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip &>>$log_file
-echo $?
-
-cd  /usr/share/nginx/html &>>$log_file
-
-Head "extract the frontend.zip file"
-unzip /tmp/frontend.zip &>>$log_file
-echo $?
+App_prereq "/usr/share/nginx/html"
 
 Head "start the nginx service"
 systemctl enable nginx &>>$log_file

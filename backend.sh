@@ -1,5 +1,5 @@
 MYSQL_PASSWORD=$1
-
+Component=backend
 source common.sh
 
 Head "disable the default version"
@@ -16,16 +16,7 @@ Head "add username"
 useradd expense &>>$log_file
 echo $?
 
-Head "remove app folder"
-rm -rf /app &>>$log_file
-echo $?
-
-Head "create app"
-mkdir /app &>>$log_file
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>$log_file
-cd /app &>>$log_file
-unzip /tmp/backend.zip &>>$log_file
-echo $?
+App_prereq "/app"
 
 Head "intall npm"
 npm install &>>$log_file
