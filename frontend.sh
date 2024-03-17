@@ -23,7 +23,7 @@ echo $?
 
 cd  /usr/share/nginx/html &>>$log_file
 
-Heead "extract the frontend.zip file"
+Head "extract the frontend.zip file"
 unzip /tmp/frontend.zip &>>$log_file
 echo $?
 
