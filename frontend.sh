@@ -5,7 +5,7 @@ Head() {
   }
 
 
- Head"install nginic"
+Head"install nginx"
 dnf install nginx -y &>>$log_file
 echo $?
 
