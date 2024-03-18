@@ -9,7 +9,7 @@ dnf module enable nodejs:18 -y &>>$log_file
 Stat $?
 
 
-Head " install the nodejs"
+Head "install the nodejs"
 dnf install nodejs -y &>>$log_file
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
 Stat $?
