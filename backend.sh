@@ -15,7 +15,10 @@ cp backend.service /etc/systemd/system/backend.service &>>$log_file
 Stat $?
 
 Head "add username"
-useradd expense &>>$log_file
+id expense &>>$log_file
+if [ $? -nq 0 ]; then
+  useradd expense &>>$log_file
+fi
 Stat $?
 
 App_prereq "/app"
