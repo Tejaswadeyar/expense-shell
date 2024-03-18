@@ -23,10 +23,11 @@ Stat $?
 
 App_prereq "/app"
 
-Head "intall npm"
+Head "downloading the application dependencies"
 npm install &>>$log_file
 Stat $?
 
+Head "download systemD"
 systemctl daemon-reload &>>$log_file
 Stat $?
 

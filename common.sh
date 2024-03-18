@@ -24,8 +24,9 @@ Head() {
    Head "Extract the application content"
    unzip /tmp/${component}.zip &>>$log_file
    Stat $?
-
   }
+
+
 Stat() {
   if [ $1 -eq 0 ]; then
        echo SUCCESS
