@@ -1,5 +1,5 @@
 MYSQL_PASSWORD=$1
-Component=backend
+component=backend
 source common.sh
 
 Head "disable the default version"
