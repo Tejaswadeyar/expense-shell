@@ -9,20 +9,28 @@ Head() {
     DIR=$1
    Head "remove app folder"
    rm -rf $1 &>>$log_file
-   echo $?
+   Stat $?
 
    Head "create application directory"
    mkdir $1 &>>$log_file
-   echo $?
+   Stat $?
 
    Head "Download the application content"
    curl -o /tmp/${component}.zip https://expense-artifacts.s3.amazonaws.com/${component}.zip &>>$log_file
-   echo $?
+   Stat $?
 
    cd $1
 
    Head "Extract the application content"
    unzip /tmp/${component}.zip &>>$log_file
-   echo $?
+   Stat $?
 
   }
+Stat() {
+  if [ $1 -eq 0 ]; then
+       echo SUCCESS
+      else
+       echo FALIURE
+       exit 1
+    fi
+}
