@@ -16,7 +16,7 @@ Stat $?
 
 Head "add username"
 id expense &>>$log_file
-if [ $? -nq 0 ]; then
+if [ $? -ne 0 ]; then
   useradd expense &>>$log_file
 fi
 Stat $?
